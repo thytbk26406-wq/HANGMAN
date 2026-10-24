@@ -3,7 +3,7 @@ os.environ["QT_SCALE_FACTOR"] = "0.8"   # thu nhỏ giao diện cho vừa màn h
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtCore import Qt, QSize, QTimer
 from PyQt6.QtGui import QIcon, QPixmap, QPainter, QPen, QColor
-
+os.chdir(os.path.dirname(os.path.abspath(__file__)))   # luôn chạy từ thư mục chứa main.py
 FILE = "accounts.json"
 LOI_MK = "Mật khẩu ít nhất 8 ký tự, 1 chữ cái in hoa, 1 số, 1 ký tự đặc biệt"
 STYLE_NUT = ("QPushButton {background-color:#0780C3; color:white; border-radius:14px;"

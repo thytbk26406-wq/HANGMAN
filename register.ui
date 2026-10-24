@@ -134,7 +134,7 @@
      <string notr="true">QPushButton#btnBack {
     border: none;
     background-color: transparent;
-    image: url(&quot;C:/Users/84933/PycharmProjects/PythonProject2/mũi tên.png&quot;);
+    image: url(&quot;C:/Users/84933/PycharmProjects/HANGMAN/mui_ten.png&quot;);
 }</string>
     </property>
     <property name="text">

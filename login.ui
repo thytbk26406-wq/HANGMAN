@@ -109,7 +109,7 @@
      <string notr="true">QPushButton#btnBack {
     border: none;
     background-color: transparent;
-    image: url(&quot;C:/Users/84933/PycharmProjects/PythonProject2/mũi tên.png&quot;);
+    image: url(&quot;C:/Users/84933/PycharmProjects/HANGMAN/mui_ten.png&quot;);
 }</string>
     </property>
     <property name="text">
@@ -119,8 +119,8 @@
    <widget class="QPushButton" name="btnLogin">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>700</y>
+      <x>430</x>
+      <y>710</y>
       <width>201</width>
       <height>81</height>
      </rect>
