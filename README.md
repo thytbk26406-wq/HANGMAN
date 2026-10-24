@@ -1,6 +1,6 @@
 # HANGMAN – Trò chơi đoán chữ
 
-Bài tập nhóm môn Tư duy lập trình: lập trình game Hangman bằng Python và PyQt6.
+Bài tập nhóm môn Tư duy lập trình: lập trình game Hangman bằng Python và PyQt6 + Qt Designer.
 
 ## Chức năng hiện có
 
