@@ -12,168 +12,180 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Maxscore(object):
     def setupUi(self, Maxscore):
         Maxscore.setObjectName("Maxscore")
-        Maxscore.resize(650, 387)
-        Maxscore.setStyleSheet("background-color: #FFF7FA;")
+        Maxscore.resize(690, 407)
+        Maxscore.setStyleSheet("background-color: #DFF6FF;")
         self.lbl_ScoresTitile = QtWidgets.QLabel(parent=Maxscore)
         self.lbl_ScoresTitile.setGeometry(QtCore.QRect(50, 35, 550, 60))
         font = QtGui.QFont()
-        font.setPointSize(20)
+        font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
         self.lbl_ScoresTitile.setFont(font)
-        self.lbl_ScoresTitile.setStyleSheet("color: #D65A8A;\n"
-"background-color: transparent;\n"
+        self.lbl_ScoresTitile.setStyleSheet("color: #075985;\n"
+"font-size: 36px;\n"
+"font-weight: bold;\n"
+"background: transparent;\n"
 "border: none;")
         self.lbl_ScoresTitile.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lbl_ScoresTitile.setObjectName("lbl_ScoresTitile")
         self.frameEasy = QtWidgets.QFrame(parent=Maxscore)
         self.frameEasy.setGeometry(QtCore.QRect(20, 125, 190, 220))
-        self.frameEasy.setStyleSheet("background-color: #FFE4EC;\n"
-"border: 2px solid #F8BBD0;\n"
-"border-radius: 12px;")
+        self.frameEasy.setStyleSheet("background-color: #EAF9FF;\n"
+"border: 3px solid #168CCB;\n"
+"border-radius: 20px;")
         self.frameEasy.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frameEasy.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frameEasy.setObjectName("frameEasy")
         self.lbl_EasyScore = QtWidgets.QLabel(parent=self.frameEasy)
         self.lbl_EasyScore.setGeometry(QtCore.QRect(40, 20, 111, 21))
         font = QtGui.QFont()
-        font.setPointSize(14)
+        font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
         self.lbl_EasyScore.setFont(font)
-        self.lbl_EasyScore.setStyleSheet("background-color: transparent;\n"
-"color: #783A56;\n"
+        self.lbl_EasyScore.setStyleSheet("color: #075985;\n"
+"font-size: 20px;\n"
+"font-weight: bold;\n"
+"background: transparent;\n"
 "border: none;")
         self.lbl_EasyScore.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter|QtCore.Qt.AlignmentFlag.AlignTop)
         self.lbl_EasyScore.setObjectName("lbl_EasyScore")
         self.lbl_MaxETitle = QtWidgets.QLabel(parent=self.frameEasy)
-        self.lbl_MaxETitle.setGeometry(QtCore.QRect(40, 180, 111, 21))
+        self.lbl_MaxETitle.setGeometry(QtCore.QRect(20, 180, 151, 21))
         font = QtGui.QFont()
-        font.setPointSize(12)
-        font.setBold(False)
-        font.setWeight(50)
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
         self.lbl_MaxETitle.setFont(font)
-        self.lbl_MaxETitle.setStyleSheet("background-color: transparent;\n"
-"color: #783A56;\n"
+        self.lbl_MaxETitle.setStyleSheet("color: #075985;\n"
+"font-size: 20px;\n"
+"font-weight: bold;\n"
+"background: transparent;\n"
 "border: none;")
         self.lbl_MaxETitle.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter|QtCore.Qt.AlignmentFlag.AlignTop)
         self.lbl_MaxETitle.setObjectName("lbl_MaxETitle")
         self.lbl_diemmaxE = QtWidgets.QLabel(parent=self.frameEasy)
         self.lbl_diemmaxE.setGeometry(QtCore.QRect(40, 50, 111, 111))
         font = QtGui.QFont()
-        font.setPointSize(60)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setUnderline(False)
-        font.setWeight(50)
-        font.setStrikeOut(False)
-        font.setKerning(False)
-        font.setStyleStrategy(QtGui.QFont.StyleStrategy.PreferDefault)
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
         self.lbl_diemmaxE.setFont(font)
-        self.lbl_diemmaxE.setStyleSheet("background-color: transparent;\n"
-"color: #783A56;\n"
+        self.lbl_diemmaxE.setStyleSheet("color: #075985;\n"
+"font-size: 72px;\n"
+"font-weight: bold;\n"
+"background: transparent;\n"
 "border: none;")
         self.lbl_diemmaxE.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lbl_diemmaxE.setObjectName("lbl_diemmaxE")
         self.frameMedium = QtWidgets.QFrame(parent=Maxscore)
         self.frameMedium.setGeometry(QtCore.QRect(230, 125, 190, 220))
-        self.frameMedium.setStyleSheet("background-color: #F8BBD0;\n"
-"border: 2px solid #EC8EAF;\n"
-"border-radius: 12px;")
+        self.frameMedium.setStyleSheet("background-color: #B8E8FA;\n"
+"border: 3px solid #168CCB;\n"
+"border-radius: 20px;")
         self.frameMedium.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frameMedium.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frameMedium.setObjectName("frameMedium")
         self.lbl_MediumScore = QtWidgets.QLabel(parent=self.frameMedium)
         self.lbl_MediumScore.setGeometry(QtCore.QRect(40, 20, 111, 21))
         font = QtGui.QFont()
-        font.setPointSize(14)
+        font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
         self.lbl_MediumScore.setFont(font)
-        self.lbl_MediumScore.setStyleSheet("background-color: transparent;\n"
-"color: #783A56;\n"
+        self.lbl_MediumScore.setStyleSheet("color: #075985;\n"
+"font-size: 20px;\n"
+"font-weight: bold;\n"
+"background: transparent;\n"
 "border: none;")
         self.lbl_MediumScore.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter|QtCore.Qt.AlignmentFlag.AlignTop)
         self.lbl_MediumScore.setObjectName("lbl_MediumScore")
         self.lbl_MaxMTitile = QtWidgets.QLabel(parent=self.frameMedium)
-        self.lbl_MaxMTitile.setGeometry(QtCore.QRect(40, 180, 111, 21))
+        self.lbl_MaxMTitile.setGeometry(QtCore.QRect(30, 180, 131, 21))
         font = QtGui.QFont()
-        font.setPointSize(12)
-        font.setBold(False)
-        font.setWeight(50)
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
         self.lbl_MaxMTitile.setFont(font)
-        self.lbl_MaxMTitile.setStyleSheet("background-color: transparent;\n"
-"color: #783A56;\n"
+        self.lbl_MaxMTitile.setStyleSheet("color: #075985;\n"
+"font-size: 20px;\n"
+"font-weight: bold;\n"
+"background: transparent;\n"
 "border: none;")
         self.lbl_MaxMTitile.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter|QtCore.Qt.AlignmentFlag.AlignTop)
         self.lbl_MaxMTitile.setObjectName("lbl_MaxMTitile")
         self.lbl_diemmaxM = QtWidgets.QLabel(parent=self.frameMedium)
         self.lbl_diemmaxM.setGeometry(QtCore.QRect(30, 50, 141, 111))
         font = QtGui.QFont()
-        font.setPointSize(60)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setUnderline(False)
-        font.setWeight(50)
-        font.setStrikeOut(False)
-        font.setKerning(False)
-        font.setStyleStrategy(QtGui.QFont.StyleStrategy.PreferDefault)
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
         self.lbl_diemmaxM.setFont(font)
-        self.lbl_diemmaxM.setStyleSheet("background-color: transparent;\n"
-"color: #783A56;\n"
+        self.lbl_diemmaxM.setStyleSheet("color: #075985;\n"
+"font-size: 72px;\n"
+"font-weight: bold;\n"
+"background: transparent;\n"
 "border: none;")
         self.lbl_diemmaxM.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lbl_diemmaxM.setObjectName("lbl_diemmaxM")
         self.frameHard = QtWidgets.QFrame(parent=Maxscore)
         self.frameHard.setGeometry(QtCore.QRect(440, 125, 190, 220))
-        self.frameHard.setStyleSheet("\n"
-"background-color: #F48FB1;\n"
-"border: 2px solid #D96590;\n"
-"border-radius: 12px;")
+        self.frameHard.setStyleSheet("background-color: #8BD6F4;\n"
+"border: 3px solid #168CCB;\n"
+"border-radius: 20px;")
         self.frameHard.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frameHard.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frameHard.setObjectName("frameHard")
         self.lbl_HardScore = QtWidgets.QLabel(parent=self.frameHard)
         self.lbl_HardScore.setGeometry(QtCore.QRect(40, 20, 111, 21))
         font = QtGui.QFont()
-        font.setPointSize(14)
+        font.setPointSize(-1)
         font.setBold(True)
         font.setWeight(75)
         self.lbl_HardScore.setFont(font)
-        self.lbl_HardScore.setStyleSheet("background-color: transparent;\n"
-"color: #783A56;\n"
+        self.lbl_HardScore.setStyleSheet("color: #075985;\n"
+"font-size: 20px;\n"
+"font-weight: bold;\n"
+"background: transparent;\n"
 "border: none;")
         self.lbl_HardScore.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter|QtCore.Qt.AlignmentFlag.AlignTop)
         self.lbl_HardScore.setObjectName("lbl_HardScore")
         self.lbl_MaxHTitile = QtWidgets.QLabel(parent=self.frameHard)
-        self.lbl_MaxHTitile.setGeometry(QtCore.QRect(40, 180, 111, 21))
+        self.lbl_MaxHTitile.setGeometry(QtCore.QRect(30, 180, 131, 21))
         font = QtGui.QFont()
-        font.setPointSize(12)
-        font.setBold(False)
-        font.setWeight(50)
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
         self.lbl_MaxHTitile.setFont(font)
-        self.lbl_MaxHTitile.setStyleSheet("background-color: transparent;\n"
-"color: #783A56;\n"
+        self.lbl_MaxHTitile.setStyleSheet("color: #075985;\n"
+"font-size: 20px;\n"
+"font-weight: bold;\n"
+"background: transparent;\n"
 "border: none;")
         self.lbl_MaxHTitile.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter|QtCore.Qt.AlignmentFlag.AlignTop)
         self.lbl_MaxHTitile.setObjectName("lbl_MaxHTitile")
         self.lbl_diemmaxH = QtWidgets.QLabel(parent=self.frameHard)
         self.lbl_diemmaxH.setGeometry(QtCore.QRect(40, 50, 111, 111))
         font = QtGui.QFont()
-        font.setPointSize(60)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setUnderline(False)
-        font.setWeight(50)
-        font.setStrikeOut(False)
-        font.setKerning(False)
-        font.setStyleStrategy(QtGui.QFont.StyleStrategy.PreferDefault)
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
         self.lbl_diemmaxH.setFont(font)
-        self.lbl_diemmaxH.setStyleSheet("background-color: transparent;\n"
-"color: #783A56;\n"
+        self.lbl_diemmaxH.setStyleSheet("color: #075985;\n"
+"font-size: 72px;\n"
+"font-weight: bold;\n"
+"background: transparent;\n"
 "border: none;")
         self.lbl_diemmaxH.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lbl_diemmaxH.setObjectName("lbl_diemmaxH")
+        self.btnBack = QtWidgets.QPushButton(parent=Maxscore)
+        self.btnBack.setGeometry(QtCore.QRect(595, 10, 61, 61))
+        self.btnBack.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("../../Pictures/Screenshots/Ảnh chụp màn hình 2026-11-01 105902.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.btnBack.setIcon(icon)
+        self.btnBack.setIconSize(QtCore.QSize(48, 48))
+        self.btnBack.setObjectName("btnBack")
 
         self.retranslateUi(Maxscore)
         QtCore.QMetaObject.connectSlotsByName(Maxscore)

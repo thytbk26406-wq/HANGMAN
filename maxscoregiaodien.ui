@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>650</width>
-    <height>387</height>
+    <width>690</width>
+    <height>407</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Hangman - High Scores</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #FFF7FA;</string>
+   <string notr="true">background-color: #DFF6FF;</string>
   </property>
   <widget class="QLabel" name="lbl_ScoresTitile">
    <property name="geometry">
@@ -27,14 +27,16 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>20</pointsize>
+     <pointsize>-1</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: #D65A8A;
-background-color: transparent;
+    <string notr="true">color: #075985;
+font-size: 36px;
+font-weight: bold;
+background: transparent;
 border: none;</string>
    </property>
    <property name="text">
@@ -54,9 +56,9 @@ border: none;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #FFE4EC;
-border: 2px solid #F8BBD0;
-border-radius: 12px;</string>
+    <string notr="true">background-color: #EAF9FF;
+border: 3px solid #168CCB;
+border-radius: 20px;</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -75,14 +77,16 @@ border-radius: 12px;</string>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>-1</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-color: #783A56;
+     <string notr="true">color: #075985;
+font-size: 20px;
+font-weight: bold;
+background: transparent;
 border: none;</string>
     </property>
     <property name="text">
@@ -95,22 +99,24 @@ border: none;</string>
    <widget class="QLabel" name="lbl_MaxETitle">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>20</x>
       <y>180</y>
-      <width>111</width>
+      <width>151</width>
       <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>12</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-color: #783A56;
+     <string notr="true">color: #075985;
+font-size: 20px;
+font-weight: bold;
+background: transparent;
 border: none;</string>
     </property>
     <property name="text">
@@ -131,19 +137,16 @@ border: none;</string>
     </property>
     <property name="font">
      <font>
-      <pointsize>60</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-      <underline>false</underline>
-      <strikeout>false</strikeout>
-      <stylestrategy>PreferDefault</stylestrategy>
-      <kerning>false</kerning>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-color: #783A56;
+     <string notr="true">color: #075985;
+font-size: 72px;
+font-weight: bold;
+background: transparent;
 border: none;</string>
     </property>
     <property name="text">
@@ -164,9 +167,9 @@ border: none;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #F8BBD0;
-border: 2px solid #EC8EAF;
-border-radius: 12px;</string>
+    <string notr="true">background-color: #B8E8FA;
+border: 3px solid #168CCB;
+border-radius: 20px;</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -185,14 +188,16 @@ border-radius: 12px;</string>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>-1</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-color: #783A56;
+     <string notr="true">color: #075985;
+font-size: 20px;
+font-weight: bold;
+background: transparent;
 border: none;</string>
     </property>
     <property name="text">
@@ -205,22 +210,24 @@ border: none;</string>
    <widget class="QLabel" name="lbl_MaxMTitile">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>180</y>
-      <width>111</width>
+      <width>131</width>
       <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>12</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-color: #783A56;
+     <string notr="true">color: #075985;
+font-size: 20px;
+font-weight: bold;
+background: transparent;
 border: none;</string>
     </property>
     <property name="text">
@@ -241,19 +248,16 @@ border: none;</string>
     </property>
     <property name="font">
      <font>
-      <pointsize>60</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-      <underline>false</underline>
-      <strikeout>false</strikeout>
-      <stylestrategy>PreferDefault</stylestrategy>
-      <kerning>false</kerning>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-color: #783A56;
+     <string notr="true">color: #075985;
+font-size: 72px;
+font-weight: bold;
+background: transparent;
 border: none;</string>
     </property>
     <property name="text">
@@ -274,10 +278,9 @@ border: none;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">
-background-color: #F48FB1;
-border: 2px solid #D96590;
-border-radius: 12px;</string>
+    <string notr="true">background-color: #8BD6F4;
+border: 3px solid #168CCB;
+border-radius: 20px;</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -296,14 +299,16 @@ border-radius: 12px;</string>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>-1</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-color: #783A56;
+     <string notr="true">color: #075985;
+font-size: 20px;
+font-weight: bold;
+background: transparent;
 border: none;</string>
     </property>
     <property name="text">
@@ -316,22 +321,24 @@ border: none;</string>
    <widget class="QLabel" name="lbl_MaxHTitile">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>180</y>
-      <width>111</width>
+      <width>131</width>
       <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>12</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-color: #783A56;
+     <string notr="true">color: #075985;
+font-size: 20px;
+font-weight: bold;
+background: transparent;
 border: none;</string>
     </property>
     <property name="text">
@@ -352,19 +359,16 @@ border: none;</string>
     </property>
     <property name="font">
      <font>
-      <pointsize>60</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-      <underline>false</underline>
-      <strikeout>false</strikeout>
-      <stylestrategy>PreferDefault</stylestrategy>
-      <kerning>false</kerning>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-color: #783A56;
+     <string notr="true">color: #075985;
+font-size: 72px;
+font-weight: bold;
+background: transparent;
 border: none;</string>
     </property>
     <property name="text">
@@ -374,6 +378,29 @@ border: none;</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="btnBack">
+   <property name="geometry">
+    <rect>
+     <x>595</x>
+     <y>10</y>
+     <width>61</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../Pictures/Screenshots/Ảnh chụp màn hình 2026-11-01 105902.png</normaloff>../../Pictures/Screenshots/Ảnh chụp màn hình 2026-11-01 105902.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
   </widget>
  </widget>
  <resources/>
