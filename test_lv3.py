@@ -41,11 +41,19 @@ class Hangman(QWidget):
 
         self.ui.label_14.setFont(font_bold)
         self.ui.label_14.setStyleSheet(lbl_style)
-        self.ui.label_14.setGeometry(10, 5, 171, 41)
+        self.ui.frame_3.setGeometry(290, 115, 230, 55)      # thẳng hàng với ô gợi ý bên dưới
+        self.ui.label_14.setGeometry(10, 5, 210, 45)
 
-        self.ui.label_15.setFont(font_bold)
+        # Gợi ý Level 3 là câu dài -> nới rộng ô gợi ý và cho chữ tự xuống dòng
+        font_hint = QtGui.QFont()
+        font_hint.setBold(True)
+        font_hint.setPointSize(11)
+        self.ui.frame_4.setGeometry(290, 190, 230, 135)
+        self.ui.label_15.setFont(font_hint)
         self.ui.label_15.setStyleSheet(lbl_style)
-        self.ui.label_15.setGeometry(10, 5, 171, 41)
+        self.ui.label_15.setGeometry(12, 8, 206, 119)
+        self.ui.label_15.setWordWrap(True)
+        self.ui.label_15.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
 
         #Tạo nhãn cấp độ và tiến độ
         self.level_label = QLabel("LEVEL 3: Hard", self)
