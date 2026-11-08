@@ -23,3 +23,9 @@ hint_list = [
     "Animal",      # MONKEY
     "Travel"       # JOURNEY
 ]
+
+
+# Hàm lấy từ ngẫu nhiên của Level 1 (từ nhánh lv1)
+def random_word():
+    i = random.randint(0, len(word_list) - 1)
+    return word_list[i], hint_list[i]
