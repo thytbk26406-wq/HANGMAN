@@ -1,4 +1,7 @@
 import sys, os, json, hashlib
+
+from chonlevel import Ui_chonlevel
+
 os.environ["QT_SCALE_FACTOR"] = "0.8"   # thu nhỏ giao diện cho vừa màn hình (muốn nhỏ hơn thì giảm số)
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtCore import Qt, QTimer
@@ -125,7 +128,20 @@ class RegisterWindow(QtWidgets.QMainWindow):
         self.close()
 
 
+# ---------- Trang trắng (tạm, chờ phần game) ----------
+class TrangTrang(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setStyleSheet("background-color: white;")
+
+# ---------- Trang chọn level ----------
+class LevelWindow(QtWidgets.QWidget):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_chonlevel()
+        self.ui.setupUi(self)
 # ---------- Trang đăng nhập ----------
+
 class LoginWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
@@ -139,7 +155,7 @@ class LoginWindow(QtWidgets.QMainWindow):
         user = self.txtUsername.text().strip()
         ds = doc_tk()
         if user in ds and ds[user] == bam(self.txtPassword.text()):
-            self.trang = LevelWindow()     # chuyển sang trang chọn level
+            self.trang = LevelWindow()
             self.trang.show()
             self.close()
         else:
@@ -155,13 +171,3 @@ app = QtWidgets.QApplication(sys.argv)
 window = WelcomeWindow()
 window.show()
 sys.exit(app.exec())
-import sys
-from PyQt6.QtWidgets import QApplication
-from test_lv2 import Hangman
-
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    game = Hangman()
-    game.show()
-    sys.exit(app.exec())
