@@ -33,7 +33,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../OneDrive/Pictures/Screenshots/Ảnh chụp màn hình 2026-10-24 141744.png</pixmap>
+     <pixmap>logo_hangman.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -134,7 +134,7 @@
      <string notr="true">QPushButton#btnBack {
     border: none;
     background-color: transparent;
-    image: url(&quot;C:/Users/84933/PycharmProjects/HANGMAN/mui_ten.png&quot;);
+    image: url(&quot;mui_ten.png&quot;);
 }</string>
     </property>
     <property name="text">
