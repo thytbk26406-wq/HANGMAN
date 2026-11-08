@@ -1,8 +1,7 @@
 import sys, os, json, hashlib
 os.environ["QT_SCALE_FACTOR"] = "0.8"   # thu nhỏ giao diện cho vừa màn hình (muốn nhỏ hơn thì giảm số)
 from PyQt6 import QtWidgets, uic
-from PyQt6.QtCore import Qt, QSize, QTimer
-from PyQt6.QtGui import QIcon, QPixmap, QPainter, QPen, QColor
+from PyQt6.QtCore import Qt, QTimer
 os.chdir(os.path.dirname(os.path.abspath(__file__)))   # luôn chạy từ thư mục chứa main.py
 FILE = "accounts.json"
 LOI_MK = "Mật khẩu ít nhất 8 ký tự, 1 chữ cái in hoa, 1 số, 1 ký tự đặc biệt"
@@ -37,37 +36,6 @@ def mat_khau_manh(mk):
         elif not c.isalnum():
             dac_biet = True
     return len(mk) >= 8 and hoa and so and dac_biet
-
-
-def ve_mat(gach):                      # vẽ con mắt bằng hình cơ bản
-    pm = QPixmap(96, 96)
-    pm.fill(Qt.GlobalColor.transparent)
-    p = QPainter(pm)
-    p.setRenderHint(QPainter.RenderHint.Antialiasing)
-    p.setPen(QPen(QColor("#01579B"), 7))
-    p.drawEllipse(8, 26, 80, 44)       # tròng mắt
-    p.setBrush(QColor("#01579B"))
-    p.drawEllipse(36, 36, 24, 24)      # con ngươi
-    if gach:
-        p.drawLine(14, 84, 82, 12)     # gạch chéo khi đang ẩn
-    p.end()
-    return QIcon(pm)
-
-
-def them_con_mat(o):
-    o.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
-    nut = QtWidgets.QToolButton(o)
-    nut.setIcon(ve_mat(True))
-    nut.setIconSize(QSize(36, 36))
-    nut.setStyleSheet("border: none;")
-    nut.setGeometry(o.width() - 60, (o.height() - 40) // 2, 40, 40)
-
-    def doi():
-        an = o.echoMode() == QtWidgets.QLineEdit.EchoMode.Password
-        o.setEchoMode(QtWidgets.QLineEdit.EchoMode.Normal if an else QtWidgets.QLineEdit.EchoMode.Password)
-        nut.setIcon(ve_mat(not an))
-
-    nut.clicked.connect(doi)
 
 
 def tao_loi(cua_so, nut):              # label đỏ nằm dưới nút
@@ -126,8 +94,8 @@ class RegisterWindow(QtWidgets.QMainWindow):
         super().__init__()
         uic.loadUi("register.ui", self)
         cai_dat(self, self.btnRegister, [self.txtUsername, self.txtPassword, self.txtConfirm])
-        them_con_mat(self.txtPassword)
-        them_con_mat(self.txtConfirm)
+        self.txtPassword.setEchoMode(QtWidgets.QLineEdit.EchoMode.Normal)   # hiện mật khẩu
+        self.txtConfirm.setEchoMode(QtWidgets.QLineEdit.EchoMode.Normal)
         self.btnRegister.clicked.connect(self.dang_ky)
         self.btnBack.clicked.connect(self.quay_lai)
 
@@ -157,20 +125,13 @@ class RegisterWindow(QtWidgets.QMainWindow):
         self.close()
 
 
-# ---------- Trang trắng (tạm, chờ phần game) ----------
-class TrangTrang(QtWidgets.QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.setStyleSheet("background-color: white;")
-
-
 # ---------- Trang đăng nhập ----------
 class LoginWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi("login.ui", self)
         cai_dat(self, self.btnLogin, [self.txtUsername, self.txtPassword])
-        them_con_mat(self.txtPassword)
+        self.txtPassword.setEchoMode(QtWidgets.QLineEdit.EchoMode.Normal)   # hiện mật khẩu
         self.btnLogin.clicked.connect(self.dang_nhap)
         self.btnBack.clicked.connect(self.quay_lai)
 
@@ -178,8 +139,8 @@ class LoginWindow(QtWidgets.QMainWindow):
         user = self.txtUsername.text().strip()
         ds = doc_tk()
         if user in ds and ds[user] == bam(self.txtPassword.text()):
-            self.trang = TrangTrang()      # TODO: thay bằng màn hình game
-            self.trang.showMaximized()
+            self.trang = LevelWindow()     # chuyển sang trang chọn level
+            self.trang.show()
             self.close()
         else:
             self.lblError.setText("Tên đăng nhập hoặc mật khẩu không chính xác")
@@ -194,3 +155,13 @@ app = QtWidgets.QApplication(sys.argv)
 window = WelcomeWindow()
 window.show()
 sys.exit(app.exec())
+import sys
+from PyQt6.QtWidgets import QApplication
+from test_lv2 import Hangman
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    game = Hangman()
+    game.show()
+    sys.exit(app.exec())
