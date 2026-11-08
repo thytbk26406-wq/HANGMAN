@@ -1,6 +1,9 @@
 import sys, os, json, hashlib
 
 from chonlevel import Ui_chonlevel
+from test import Hangman as HangmanEasy        # Level 1 (nhánh lv1)
+from test_lv2 import Hangman as HangmanMedium  # Level 2 (nhánh lv2)
+from test_lv3 import Hangman as HangmanHard    # Level 3 (nhánh lv3)
 
 os.environ["QT_SCALE_FACTOR"] = "0.8"   # thu nhỏ giao diện cho vừa màn hình (muốn nhỏ hơn thì giảm số)
 from PyQt6 import QtWidgets, uic
@@ -140,6 +143,18 @@ class LevelWindow(QtWidgets.QWidget):
         super().__init__()
         self.ui = Ui_chonlevel()
         self.ui.setupUi(self)
+        self.ui.btnEasy.clicked.connect(lambda: self.mo_game(HangmanEasy))
+        self.ui.btnMedium.clicked.connect(lambda: self.mo_game(HangmanMedium))
+        self.ui.btnHard.clicked.connect(lambda: self.mo_game(HangmanHard))
+
+    def mo_game(self, game):
+        self.game = game()
+        self.game.setAttribute(Qt.WidgetAttribute.WA_DeleteOnClose)   # đóng game thì xóa cửa sổ
+        self.game.destroyed.connect(self.show)                        # ... và quay lại trang chọn level
+        self.game.show()
+        self.hide()
+
+
 # ---------- Trang đăng nhập ----------
 
 class LoginWindow(QtWidgets.QMainWindow):
