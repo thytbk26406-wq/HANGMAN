@@ -1,4 +1,3 @@
-
 import sys
 import random
 
@@ -43,6 +42,9 @@ class Hangman(QWidget):
 
         # Kiểm tra điểm đã được lưu hay chưa
         self.score_saved = False
+
+        # Kiểm tra trang điểm cao đã được mở chưa
+        self.score_page_opened = False
 
         # Chỉnh font và kiểu dáng chữ cho tiêu đề
         font_bold = QtGui.QFont()
@@ -185,6 +187,10 @@ class Hangman(QWidget):
             luu_diem("Medium", self.score)
             self.score_saved = True
 
+    # Kết thúc game: đóng cửa sổ, closeEvent sẽ lưu điểm và mở trang điểm cao
+    def mo_diem_cao(self):
+        self.close()
+
     # Hàm khởi động lại danh sách từ
     def restart_game(self):
         self.remaining_indices = []
@@ -212,9 +218,8 @@ class Hangman(QWidget):
                 f"Tổng điểm của bạn: {self.score}"
             )
 
-            # Vô hiệu hóa các nút chữ cái
-            for b in self.buttons:
-                b.setEnabled(False)
+            # Chuyển sang trang điểm cao nhất
+            self.mo_diem_cao()
 
             return
 
@@ -327,41 +332,27 @@ class Hangman(QWidget):
 
         # Nếu hết 6 lượt đoán
         elif self.lives == 0:
-
-            msg = QMessageBox(self)
-            msg.setIcon(QMessageBox.Icon.Critical)
-            msg.setWindowTitle("BẠN ĐÃ HẾT LƯỢT ĐOÁN")
-
-            msg.setText(
+            QMessageBox.information(
+                self,
+                "BẠN ĐÃ HẾT LƯỢT ĐOÁN",
                 f"Từ đúng: {self.secret_word}\n"
                 f"Tổng điểm: {self.score}"
             )
 
-            btn_retry = msg.addButton(
-                "Thử lại",
-                QMessageBox.ButtonRole.AcceptRole
-            )
+            # Hết lượt thì sang trang điểm cao nhất
+            self.mo_diem_cao()
 
-            msg.addButton(
-                "Thoát",
-                QMessageBox.ButtonRole.RejectRole
-            )
-
-            msg.exec()
-
-            # Nếu người chơi chọn thử lại
-            if msg.clickedButton() == btn_retry:
-                self.restart_game()
-
-            # Nếu người chơi chọn thoát
-            else:
-                # Lưu điểm vào danh sách Medium
-                self.save_score()
-                self.close()
-
-    # Lưu điểm nếu người chơi đóng cửa sổ bằng nút X
+    # Mọi cách thoát game (hết từ, hết lượt, bấm nút X) đều lưu điểm rồi mở trang điểm cao
     def closeEvent(self, event):
         self.save_score()
+        if not self.score_page_opened:
+            self.score_page_opened = True
+            try:
+                from trang_diem import mo_trang_diem
+                mo_trang_diem()
+            except Exception:
+                import traceback
+                QMessageBox.critical(self, "Lỗi mở trang điểm cao", traceback.format_exc())
         event.accept()
 
 

@@ -149,8 +149,7 @@ class LevelWindow(QtWidgets.QWidget):
 
     def mo_game(self, game):
         self.game = game()
-        self.game.setAttribute(Qt.WidgetAttribute.WA_DeleteOnClose)   # đóng game thì xóa cửa sổ
-        self.game.destroyed.connect(self.show)                        # ... và quay lại trang chọn level
+        self.game.setAttribute(Qt.WidgetAttribute.WA_DeleteOnClose)
         self.game.show()
         self.hide()
 

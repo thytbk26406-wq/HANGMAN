@@ -4,6 +4,7 @@ from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QMessageBox
 from PyQt6 import QtCore, QtGui
 from gd_hangman import Ui_Form
 from word_data import word_list, hint_list
+from thuvien_max import luu_diem
 
 
 class Hangman(QWidget):
@@ -11,6 +12,12 @@ class Hangman(QWidget):
         super().__init__()
         self.ui = Ui_Form()
         self.ui.setupUi(self)
+
+        # Kiểm tra điểm đã được lưu hay chưa
+        self.score_saved = False
+
+        # Kiểm tra trang điểm cao đã được mở chưa
+        self.score_page_opened = False
 
         #Chỉnh font và kiểu dáng chữ cho tiêu đề
         font_bold = QtGui.QFont()
@@ -82,24 +89,35 @@ class Hangman(QWidget):
 
         self.restart_game()
 
+    # Hàm lưu điểm Level 1
+    def save_score(self):
+        if not self.score_saved:
+            luu_diem("Easy", self.score)
+            self.score_saved = True
+
+    # Kết thúc game: đóng cửa sổ, closeEvent sẽ lưu điểm và mở trang điểm cao
+    def mo_diem_cao(self):
+        self.close()
+
     def restart_game(self):
         self.remaining_indices = []
         for i in range(len(word_list)):
             self.remaining_indices.append(i)
 
         self.score = 0
+        self.score_saved = False
         self.next_word()
 
     def next_word(self):
         if len(self.remaining_indices) == 0:
+            self.save_score()
             self.update_score()
             QMessageBox.information(
                 self,
                 "Hoàn thành Level",
                 f"Chúc mừng! Bạn đã chinh phục tất cả các từ vựng!\nTổng điểm đạt được: {self.score}"
             )
-            for b in self.buttons:
-                b.setEnabled(False)
+            self.mo_diem_cao()
             return
 
         random_pos = random.randint(0, len(self.remaining_indices) - 1)
@@ -168,20 +186,28 @@ class Hangman(QWidget):
             self.update_score()
             self.next_word()
         elif self.lives == 0:
-            msg = QMessageBox(self)
-            msg.setIcon(QMessageBox.Icon.Critical)
-            msg.setWindowTitle("BẠN ĐÃ HẾT LƯỢT ĐOÁN")
-            msg.setText(f"Từ đúng: {self.secret_word}\nTổng điểm: {self.score}")
+            QMessageBox.information(
+                self,
+                "BẠN ĐÃ HẾT LƯỢT ĐOÁN",
+                f"Từ đúng: {self.secret_word}\n"
+                f"Tổng điểm: {self.score}"
+            )
 
-            btn_retry = msg.addButton("Thử lại", QMessageBox.ButtonRole.AcceptRole)
-            msg.addButton("Thoát", QMessageBox.ButtonRole.RejectRole)
+            # Hết lượt thì sang trang điểm cao nhất
+            self.mo_diem_cao()
 
-            msg.exec()
-
-            if msg.clickedButton() == btn_retry:
-                self.restart_game()
-            else:
-                self.close()
+    # Mọi cách thoát game (hết từ, hết lượt, bấm nút X) đều lưu điểm rồi mở trang điểm cao
+    def closeEvent(self, event):
+        self.save_score()
+        if not self.score_page_opened:
+            self.score_page_opened = True
+            try:
+                from trang_diem import mo_trang_diem
+                mo_trang_diem()
+            except Exception:
+                import traceback
+                QMessageBox.critical(self, "Lỗi mở trang điểm cao", traceback.format_exc())
+        event.accept()
 
 
 if __name__ == "__main__":
