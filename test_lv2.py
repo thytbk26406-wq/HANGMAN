@@ -85,7 +85,7 @@ class Hangman(QWidget):
 
         # Tạo nhãn tiến độ
         self.progress_label = QLabel(self)
-        self.progress_label.setGeometry(310, 20, 200, 22)
+        self.progress_label.setGeometry(310, 5, 200, 20)
         self.progress_label.setStyleSheet(
             "font-size: 13px;"
             "color: #01579B;"
@@ -98,7 +98,7 @@ class Hangman(QWidget):
 
         # Tạo nhãn hiển thị điểm
         self.score_label = QLabel(self)
-        self.score_label.setGeometry(310, 45, 200, 22)
+        self.score_label.setGeometry(310, 28, 200, 20)
         self.score_label.setStyleSheet(
             "font-size: 13px;"
             "color: #01579B;"
